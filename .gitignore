@@ -1,14 +1,13 @@
 # Ignore everything
-*
+/*
 
 # keep gitignore
-! .gitignore
+!.gitignore
 
 # keep bash files
-! .bashrc
-! .bash_aliases
-! .profile
+!.bashrc
+!.bash_aliases
+!.profile
 
 # keep vim files
-! .vimrc
-! .vim/
+!.vimrc
