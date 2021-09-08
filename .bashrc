@@ -22,8 +22,7 @@ getExpression() {
 
 # return branch name if cwd is a git repository
 getBranch() {
-  if [ -d ".git" ]; then
-    # format branch name
+  if [ $(git rev-parse --is-inside-work-tree) == "true" ]; then
     branch_name="$(git symbolic-ref HEAD)"
     branch_name=${branch_name##refs/heads/}
     printf "\e[33m($branch_name)\e[0m";
