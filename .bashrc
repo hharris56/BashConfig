@@ -10,8 +10,20 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# prompt
-get_expression(){
+# return branch name if cwd is a git repository
+getBranch() {
+  if [ -d ".git" ]; then
+    # format branch name
+    branch_name="$(git symbolic-ref HEAD)"
+    branch_name=${branch_name##refs/heads/}
+    printf "\e[33m($branch_name)\e[0m";
+  else
+    printf "";
+  fi
+}
+
+# return prompt face
+getExpression(){
   if [ $? = 0 ]; then
     printf "\e[1;32m(✿◠‿◠)\e[0m";
   else
@@ -20,6 +32,6 @@ get_expression(){
 }
 
 export PS1="\n[ \e[1;34m\u\e[0m ] \e[1;36m\w\e[0m\n -> "
-export PS1="\n \$(get_expression) || \e[1m\w\e[0m\n\e[1;37m -> \e[0m"
+export PS1="\n \$(getExpression) || \e[1m\w\e[0m \$(getBranch) \n\e[1;37m -> \e[0m"
 
 
