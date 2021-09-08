@@ -20,14 +20,33 @@ getExpression() {
   fi
 }
 
+# returns if directory is in a git repo
+inRepo() {
+  d=`pwd`
+  while [ "$d" != "" ]; do
+    [ -d "$d"/.git ] && return 0
+    d=${d%/*}
+  done
+  return 1
+}
+
+testRepo() {
+  if [ $(inRepo) ]; then
+    printf "true";
+  else
+    printf "false";
+  fi
+}
+
 # return branch name if cwd is a git repository
 getBranch() {
-  if [ $(git rev-parse --is-inside-work-tree) == "true" ]; then
+  #if [ $(git rev-parse --is-inside-work-tree &> /dev/null) == "true" ]; then
+  if [ $(inRepo) ]; then
     branch_name="$(git symbolic-ref HEAD)"
     branch_name=${branch_name##refs/heads/}
     printf "\e[33m($branch_name)\e[0m";
   else
-    printf "";
+    printf "not a repo";
   fi
 }
 
