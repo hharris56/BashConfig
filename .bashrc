@@ -24,5 +24,5 @@ if [ -f ./.bash_prompts ]
   then
     . ./.bash_prompts
   else
-    [ -f ~/.bash_prompts ] && . ~/.bash_aliases
+    [ -f ~/.bash_prompts ] && . ~/.bash_prompts
 fi

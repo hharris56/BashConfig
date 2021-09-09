@@ -2,9 +2,9 @@
 
 # Hunter Harris
 # Custom Prompts for BASH
+# 9 8 2021
 
 ### GIT FUNCTIONALITY ### 
-
 # returns if directory is in a git repo
 inRepo() {
   d=`pwd`
@@ -26,8 +26,7 @@ getBranch() {
   fi
 }
 
-### Expression Prompt ###
-
+### HAPPY DAYS ###
 # returns expression based on previous command exit code
 getExpression() {
   if [ $? == 0 ]; then
@@ -37,10 +36,9 @@ getExpression() {
   fi
 }
 
-expressionPrompt="\n \$(getExpression) || \e[1m\w\e[0m \$(getBranch) \n\e[1;37m -> \e[0m"
+happyDays="\n \$(getExpression) || \e[1m\w\e[0m \$(getBranch) \n\e[1;37m -> \e[0m"
 
-# set prompt
-# export PS1="\n \$(getExpression) || \e[1m\w\e[0m \$(getBranch) \n\e[1;37m -> \e[0m"
-export PS1=$expressionPrompt
+#=== SET PROMPT ===#
+export PS1=$happyDays
 
 
