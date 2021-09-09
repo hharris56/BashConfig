@@ -12,7 +12,7 @@ alias chmod="sudo chmod"
 alias o="xdg-open"
 alias vi="vim"
 alias reload="source ~/.bashrc"
-alias reinit="cp ~/Dev/BashConfig/.bash* ."
+alias reinit="cp ~/Dev/BashConfig/.bash* ~"
 
 # system monitoring
 alias iptraf="sudo iptraf-ng"
