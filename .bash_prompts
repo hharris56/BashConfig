@@ -36,7 +36,7 @@ getExpression() {
   fi
 }
 
-happyDays="\n \$(getExpression) || \e[1m\w\e[0m \$(getBranch) \n\e[1;37m -> \e[0m"
+happyDays="\n \$(getExpression) || \e[1m\w\e[0m \$(getBranch) \n\[\e[1;37m\] -> \[\e[0m\]"
 
 #=== SET PROMPT ===#
 export PS1=$happyDays

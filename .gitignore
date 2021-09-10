@@ -1,8 +1,9 @@
 # Ignore everything
 /*
 
-# keep gitignore
+# keep git files
 !.gitignore
+!README.md
 
 # keep bash files
 !.bashrc
