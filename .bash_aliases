@@ -6,6 +6,9 @@ alias ls="ls --color"
 alias la="ls -a"
 alias ll="ls -lh"
 
+# run command in same process
+alias md=". md"
+
 # stackage shortcuts
 alias ghc="stack ghc"
 alias ghci="stack ghci"
