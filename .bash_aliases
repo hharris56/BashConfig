@@ -6,13 +6,17 @@ alias ls="ls --color"
 alias la="ls -a"
 alias ll="ls -lh"
 
+# stackage shortcuts
+alias ghc="stack ghc"
+alias ghci="stack ghci"
+
 # convenience (misc)
 alias vscode="code"
 alias chmod="sudo chmod"
 alias o="xdg-open"
 alias vi="vim"
 alias reload="source ~/.bashrc"
-alias reinit="cp ~/Dev/BashConfig/.bash* ~"
+alias reinit="cp ~/Dev/Bash/config/.bash* ~"
 
 # system monitoring
 alias iptraf="sudo iptraf-ng"

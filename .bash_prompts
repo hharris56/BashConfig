@@ -30,13 +30,13 @@ getBranch() {
 # returns expression based on previous command exit code
 getExpression() {
   if [ $? == 0 ]; then
-    printf "\e[1;32m(✿◠‿◠)\e[0m";
+    printf "\e[1;35m(✿◠‿◠)\e[0m";
   else
     printf "\e[1;31m(-_-;)\e[0m";
   fi
 }
 
-happyDays="\n \$(getExpression) || \e[1m\w\e[0m \$(getBranch) \n\[\e[1;37m\] -> \[\e[0m\]"
+happyDays="\n\$(getExpression) || \e[1m\w\e[0m \$(getBranch) \n\[\e[1;37m\] -> \[\e[0m\]"
 
 #=== SET PROMPT ===#
 export PS1=$happyDays
